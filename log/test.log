@@ -733,3 +733,172 @@ WARNING: Can't mass-assign protected attributes: confirmation_password
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
   [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt") VALUES ('Example User', 'user@example.com', '2011-08-31 12:42:49.822930', '2011-08-31 12:42:49.822930', '6380b4d2a3ad01172e190daa0f6afd4daa8c3d026ace34dabcea36f986f9fc53', 'fc436d17e119688c4bd93e6611556bc582eeabb4c8212dfecb64a136f5f9b549')[0m
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-08-31 23:17:09 +0100
+  Processing by UsersController#new as HTML
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered users/new.html.erb within layouts/application (108.3ms)
+Completed 200 OK in 112ms (Views: 111.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-08-31 23:17:10 +0100
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('')) LIMIT 1
+Rendered shared/_error_messages.html.erb (8.5ms)
+Rendered layouts/_stylesheets.html.erb (0.7ms)
+Rendered layouts/_header.html.erb (0.6ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered users/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 55ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-08-31 23:17:10 +0100
+  Processing by UsersController#new as HTML
+Rendered shared/_error_messages.html.erb (0.1ms)
+Rendered layouts/_stylesheets.html.erb (0.7ms)
+Rendered layouts/_header.html.erb (0.6ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-08-31 23:17:10 +0100
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"Example User", "email"=>"user@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('user@example.com')) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt") VALUES ('Example User', 'user@example.com', '2011-08-31 22:17:10.284222', '2011-08-31 22:17:10.284222', '3edd27923c21a1214f507bbc7f4b2ba02d3bfe1ba2d15c9c9912a69dceb2403d', 'f4a2581f835a0c0c8b43e93c0b74f00b0b8acb1b8a4d8865ae8bcf4d0b79406f')
+Redirected to http://www.example.com/users/1
+Completed 302 Found in 26ms
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-08-31 23:17:10 +0100
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (0.6ms)
+Rendered layouts/_header.html.erb (0.6ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.8ms)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-08-31 23:18:04 +0100
+  Processing by UsersController#new as HTML
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered users/new.html.erb within layouts/application (108.0ms)
+Completed 200 OK in 112ms (Views: 111.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-08-31 23:18:04 +0100
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('')) LIMIT 1
+Rendered shared/_error_messages.html.erb (8.5ms)
+Rendered layouts/_stylesheets.html.erb (0.7ms)
+Rendered layouts/_header.html.erb (0.6ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered users/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 55ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-08-31 23:18:05 +0100
+  Processing by UsersController#new as HTML
+Rendered shared/_error_messages.html.erb (0.1ms)
+Rendered layouts/_stylesheets.html.erb (0.7ms)
+Rendered layouts/_header.html.erb (0.6ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-08-31 23:18:05 +0100
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"Example User", "email"=>"user@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('user@example.com')) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt") VALUES ('Example User', 'user@example.com', '2011-08-31 22:18:05.089548', '2011-08-31 22:18:05.089548', '8f1484d01f787368589571a346462392eee1c3c73ea6a24f8f373bbf43807721', '1122329ac1d89dbd0d371805342f6389edf5b1f110ce69a18cd6372c20a8e0f5')[0m
+Redirected to http://www.example.com/users/1
+Completed 302 Found in 26ms
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-08-31 23:18:05 +0100
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (0.7ms)
+Rendered layouts/_header.html.erb (0.6ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.8ms)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-08-31 23:18:40 +0100
+  Processing by UsersController#new as HTML
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered users/new.html.erb within layouts/application (108.4ms)
+Completed 200 OK in 112ms (Views: 111.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-08-31 23:18:40 +0100
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('')) LIMIT 1
+Rendered shared/_error_messages.html.erb (8.5ms)
+Rendered layouts/_stylesheets.html.erb (0.7ms)
+Rendered layouts/_header.html.erb (0.6ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered users/new.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 55ms (Views: 15.3ms | ActiveRecord: 0.2ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-08-31 23:18:40 +0100
+  Processing by UsersController#new as HTML
+Rendered shared/_error_messages.html.erb (0.1ms)
+Rendered layouts/_stylesheets.html.erb (0.7ms)
+Rendered layouts/_header.html.erb (0.6ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-08-31 23:18:41 +0100
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"Example User", "email"=>"user@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('user@example.com')) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt") VALUES ('Example User', 'user@example.com', '2011-08-31 22:18:41.019448', '2011-08-31 22:18:41.019448', 'e1b209fc8fbea459b000763eb8ec30f72e0a8de21292f5251af7393aed5cea1a', '21c7809069148801fccab0d61515c217c94150fad97ddc8b16d1e822950ba453')[0m
+Redirected to http://www.example.com/users/1
+Completed 302 Found in 26ms
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-08-31 23:18:41 +0100
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (0.7ms)
+Rendered layouts/_header.html.erb (0.6ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.8ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
